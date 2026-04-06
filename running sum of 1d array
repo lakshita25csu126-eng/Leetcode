@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> sum(n);
+
+        sum[0] = nums[0];
+        
+        for (int i = 1; i < n; i++) {
+            sum[i] = sum[i - 1] + nums[i];
+        }
+
+        return sum;
+    }
+};
+
+method 2:-
+class Solution {
+2public:
+3    vector<int> runningSum(vector<int>& nums) {
+4        for (int i = 1; i < nums.size(); i++) {
+5            nums[i] += nums[i - 1];
+6        }
+7        return nums;
+8    }
+9};
